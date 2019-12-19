@@ -9,4 +9,5 @@ module.exports = {
   jsxBracketSameLine: true,
   arrowParens: 'avoid',
   endOfLine: 'lf',
+  endOfLine: 'auto',
 };

@@ -8,6 +8,10 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "eslint linebreak-style": [0, "error", "windows"],
+    "linebreak-style": 0,
+    "global-require": 0,
+
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       1,
@@ -41,9 +45,11 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/style-prop-object": "off",
     "react/jsx-closing-bracket": "off",
-    "prettier/prettier": "error",
     "arrow-parens": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "prettier/prettier": ["error", {
+     "endOfLine":"auto"
+   }],
   },
   "plugins": ["react", "prettier", "react-hooks"],
   "extends": ["airbnb"]
