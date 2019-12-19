@@ -1,5 +1,5 @@
 module.exports = {
-  printWidth: 120,
+  printWidth: 100,
   useTabs: false,
   trailingComma: 'es5',
   tabWidth: 2,
@@ -9,5 +9,4 @@ module.exports = {
   jsxBracketSameLine: true,
   arrowParens: 'avoid',
   endOfLine: 'lf',
-  endOfLine: 'auto',
 };

@@ -11,7 +11,7 @@
     "eslint linebreak-style": [0, "error", "windows"],
     "linebreak-style": 0,
     "global-require": 0,
-
+    "react/no-array-index-key": "off",
     "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": [
       1,

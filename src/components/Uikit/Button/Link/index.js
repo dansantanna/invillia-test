@@ -5,7 +5,6 @@ const Link = css`
   background-color: transparent;
   border: none;
   cursor: pointer;
-  color: #007bff;
 `;
 
 export default Link;
