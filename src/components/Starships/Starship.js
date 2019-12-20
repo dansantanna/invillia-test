@@ -6,6 +6,7 @@ import { Text, ImgIcon } from '@Uikit';
 import starshipSrc from '@/assets/img/starship.png';
 import hashSrc from '@/assets/icons/hash.svg';
 import { fetchStarship } from '@/redux/modules/starships';
+import StarshipLoader from './StarshipLoader';
 
 const ImageStarship = styled.img`
   width: 155px;
@@ -49,8 +50,9 @@ const Starship = ({ link }) => {
     if (!starship) getStarship();
   }, [link, dispatch, starship]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <StarshipLoader />;
   if (!starship) return null;
+
 
   return (
     <ContainerStarship>
