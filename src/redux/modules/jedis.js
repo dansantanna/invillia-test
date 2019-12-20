@@ -22,7 +22,7 @@ export const fetchJedis = (page = 1) => async dispatch => {
 const initialState = {
   results: [],
   count: null,
-  next: null,
+  next: true,
   error: null,
 };
 

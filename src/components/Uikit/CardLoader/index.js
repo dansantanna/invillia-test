@@ -10,7 +10,7 @@ const MyLoader = () => (
             width: 262,
             height: 321,
             borderRadius: 8,
-            margin: 10
+            margin: 50
         }}
     />
 )

@@ -10,21 +10,21 @@ import { fetchJedis } from '@/redux/modules/jedis';
 
 
 const App = () => {
-  const jedis = useSelector(state => state.jedis.results);
+  const { results, next } = useSelector(state => state.jedis);
   const dispatch = useDispatch();
   const containerRef = React.useRef()
 
   return (
     <Container ref={containerRef} >
       <InfiniteScroll
-        hasMore
+        hasMore={next}
         pageStart={0}
         loadMore={page => dispatch(fetchJedis(page))}
-        loader={<PageLoading />}
+        loader={<PageLoading key="loadaing" />}
         useWindow={false}
       >
         <ContainerJedis>
-          {jedis.map((jedi, idx) => (
+          {results.map((jedi, idx) => (
             <Jedi key={idx} {...jedi} />
           ))}
         </ContainerJedis>
