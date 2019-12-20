@@ -20,7 +20,7 @@ const ErrorMessage = ({ message, onClose, show }) => (
           evt.stopPropagation();
           onClose();
         }}>
-        Tudo bem
+        Close
       </Button>
     </Container>
   </Modal>
