@@ -37,13 +37,15 @@ const luke = {
 };
 
 describe('[Component] Jedi', () => {
-  it('Component Jedi without properties', () => {
-    const wrapper = mount(<Jedi />);
-    expect(wrapper.find(Starships));
+  it('Should  render component without send properties', () => {
+    const defaultProps = {};
+    const wrapper = mount(<Jedi {...defaultProps} />);
+    expect(wrapper.find('Card')).toHaveLength(1);
   });
 
   it('Component Jedi with properties', () => {
-    const wrapper = mount(<Jedi {...luke} a={1} />);
-    expect(wrapper.find(Starships));
+    const defaultProps = { ...luke };
+    const wrapper = mount(<Jedi {...defaultProps} />);
+    expect(wrapper.find('Card')).toHaveLength(1);
   });
 });
