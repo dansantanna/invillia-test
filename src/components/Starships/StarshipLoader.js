@@ -11,6 +11,7 @@ const ImageStarship = styled.img`
 const ContainerStarship = styled.div`
   display: flex;
   padding: 50px;
+  justify-content: center;
 `;
 
 const StarshipLoader = () => (

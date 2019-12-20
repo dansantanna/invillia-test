@@ -10,16 +10,22 @@ const Container = styled.div`
   justify-content: space-around;
 `;
 
-const ErrorMessage = ({ message, onClose }) => {
-  const [show] = React.useState(true);
-  return (
-    <Modal width="300px" height="100px" show={show} onClose={onClose} title="Oooops">
-      <Container>
-        <Text>{message}</Text>
-        <Button onClick={() => onClose()}>Ok</Button>
-      </Container>
-    </Modal>
-  );
-};
+const ErrorMessage = ({ message, onClose, show }) => (
+  <Modal width="300px" height="250px" show={show} onClose={onClose} title="Oooops">
+    <Container>
+      <Text>{message}</Text>
+      <Button
+        style={{ margin: '30px 0' }}
+        onClick={evt => {
+          evt.stopPropagation();
+          onClose();
+        }}>
+        Tudo bem
+      </Button>
+    </Container>
+  </Modal>
+);
+
+ErrorMessage.defaultProps = { show: true };
 
 export default ErrorMessage;

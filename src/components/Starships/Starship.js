@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Text, ImgIcon, ErrorMessage } from '@Uikit';
+import { Text, ImgIcon } from '@Uikit';
 import starshipSrc from '@/assets/img/starship.png';
 import hashSrc from '@/assets/icons/hash.svg';
 import { fetchStarship } from '@/redux/modules/starships';
@@ -14,6 +14,7 @@ const ImageStarship = styled.img`
 
 const ContainerStarship = styled.div`
   display: flex;
+  justify-content: center;
   padding: 50px;
 `;
 

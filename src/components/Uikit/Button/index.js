@@ -10,6 +10,24 @@ const Button = styled.button`
   line-height: 22px;
   color: ${props => props.color || null};
 
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s;
+
   ${props => props.link && Link}
   ${props => props.fullWidth && 'width: 100%;'}
 `;

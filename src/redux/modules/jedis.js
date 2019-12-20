@@ -7,14 +7,17 @@ const JEDI_SET_ERROR = 'JEDI_SET_ERROR';
 
 // Action Creators
 const fetchJedisSuccess = payload => ({ type: JEDI_SET_SUCCESS, payload });
-const fetchJedisError = payload => ({ type: JEDI_SET_ERROR, payload });
+const fetchJedisError = () => ({
+  type: JEDI_SET_ERROR,
+  payload: 'Unfortunately, there was an error listing jedis',
+});
 
 export const fetchJedis = (page = 1) => async dispatch => {
   try {
     const { data } = await swapi.get('people', { params: { page } });
     dispatch(fetchJedisSuccess(data));
   } catch (error) {
-    dispatch(fetchJedisError(error));
+    dispatch(fetchJedisError());
   }
 };
 

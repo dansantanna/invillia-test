@@ -18,6 +18,7 @@ const ModalBoxSetup = styled.div`
   left: 0;
   right: 0;
   width: ${props => props.width || '32%'};
+  max-width: ${props => props.maxWidth || '100%'};
   height: ${props => props.height || null};
   z-index: 1;
   overflow: hidden;
@@ -26,7 +27,6 @@ const ModalBoxSetup = styled.div`
   background: #ffffff;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 8px;
-  min-height: 321px;
 
   clip-path: circle(100%);
   transition: all 0.9s;
@@ -49,7 +49,7 @@ const ButtonText = styled.span`
   padding: 10px 20px;
 `;
 
-const ModalSetup = ({ show, width, children, onClose, title, height }) => {
+const ModalSetup = ({ show, width, maxWidth, children, onClose, title, height }) => {
   if (!show) return null;
   const handleClickClose = evt => {
     evt.stopPropagation();
@@ -58,7 +58,7 @@ const ModalSetup = ({ show, width, children, onClose, title, height }) => {
 
   return (
     <ModalWrapper>
-      <ModalBoxSetup width={width} height={height}>
+      <ModalBoxSetup width={width} height={height} maxWidth={maxWidth}>
         <Text onClick={handleClickClose}>
           <ButtonText>x </ButtonText>
         </Text>
