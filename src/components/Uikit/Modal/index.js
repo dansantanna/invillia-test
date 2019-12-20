@@ -12,6 +12,7 @@ const ModalWrapper = styled.div`
   display: flex;
   align-items: baseline;
 `;
+ModalWrapper.displayName = 'Modal';
 
 const ModalBoxSetup = styled.div`
   position: absolute;

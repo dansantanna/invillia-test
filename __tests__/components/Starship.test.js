@@ -19,19 +19,31 @@ const links = [
   'https://swapi.co/api/starships/17/',
 ];
 
-describe('[Component] Jedi', () => {
-  it('Component Jedi without property show', () => {
-    const wrapper = mount(<Starships />);
-    expect(wrapper.find(Starships));
+describe('[Component] Starships', () => {
+  it("Should don't render component when show property is false", () => {
+    const defaultProps = {
+      links: [],
+      show: false,
+    };
+    const wrapper = mount(<Starships {...defaultProps} />);
+    expect(wrapper.html()).toBeNull();
   });
 
-  it('Component Jedi without links', () => {
-    const wrapper = mount(<Starships show />);
-    expect(wrapper.find(Starships));
+  it("Should return ErrorMessage when don't have links", () => {
+    const defaultProps = {
+      links: [],
+      show: true,
+    };
+    const wrapper = mount(<Starships {...defaultProps} />);
+    expect(wrapper.find('ErrorMessage')).toHaveLength(1);
   });
 
-  it('Component Jedi with links', () => {
-    const wrapper = mount(<Starships show links={links} />);
-    expect(wrapper.find(Starships));
+  it('Should render Modal when component has links', () => {
+    const defaultProps = {
+      links,
+      show: true,
+    };
+    const wrapper = mount(<Starships {...defaultProps} />);
+    expect(wrapper.find('Modal')).toHaveLength(1);
   });
 });
