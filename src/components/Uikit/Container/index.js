@@ -6,7 +6,6 @@ const Container = styled.div`
   margin: 0;
   padding: 30px;
   overflow-y: scroll;
-  overflow-x: hidden;
   background: linear-gradient(0deg, #4083ca, #005fbe);
 `;
 

@@ -4,6 +4,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   width: 262px;
+  min-width: 262px;
   height: 321px;
   margin: 50px;
   background: #ffffff;
