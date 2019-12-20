@@ -53,7 +53,6 @@ const Starship = ({ link }) => {
   if (loading) return <StarshipLoader />;
   if (!starship) return null;
 
-
   return (
     <ContainerStarship>
       <ImageStarship src={starshipSrc} />

@@ -10,6 +10,7 @@
     "clean": "rmdir build",
     "commit": "git-cz",
     "lint": "eslint ./src --fix",
+    "prettier": "prettier --write \"src/**\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
