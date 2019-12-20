@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { Text, ImgIcon } from '@Uikit';
+import { Text, ImgIcon, ErrorMessage } from '@Uikit';
 import starshipSrc from '@/assets/img/starship.png';
 import hashSrc from '@/assets/icons/hash.svg';
 import { fetchStarship } from '@/redux/modules/starships';

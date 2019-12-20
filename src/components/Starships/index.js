@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Modal, Carousel } from '@Uikit';
+import { Modal, Carousel, ErrorMessage } from '@Uikit';
 import Starship from './Starship';
 
 const Starships = ({ show, onClose, links }) => {
-  if (!show || !links.length) return null;
+  if (!show) return null;
+  if (!links.length)
+    return <ErrorMessage onClose={onClose} message="This character does not have a starship :(" />;
 
   return (
     <Modal show={show} width="650px" height="400px" title="Starships" onClose={onClose}>
