@@ -7,15 +7,17 @@
     "start:server": "webpack-dev-server --mode development --open",
     "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
-    "clean": "rmdir build",
+    "clean": "rm -rf build",
     "commit": "git-cz",
     "lint": "eslint ./src --fix",
     "prettier": "prettier --write \"src/**\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll",
+    "test": "jest --watchAll=false"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dansantanna/invillia-test.git"
+    "url": "git+https://github.com/dansantanna/invillia.git"
   },
   "keywords": [
     "react",
@@ -25,9 +27,9 @@
   "author": "Daniel Sant'Anna <danielcarlossantanna@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dansantanna/invillia-test/issues"
+    "url": "https://github.com/dansantanna/invillia/issues"
   },
-  "homepage": "https://github.com/dansantanna/invillia-test#readme",
+  "homepage": "https://github.com/dansantanna/invillia#readme",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -39,6 +41,7 @@
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",
     "cz-conventional-changelog": "3.0.2",
+    "enzyme": "^3.11.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.0",
     "eslint-config-prettier": "^6.0.0",
@@ -50,6 +53,7 @@
     "eslint-watch": "^6.0.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.9.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.5",
