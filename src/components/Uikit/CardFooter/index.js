@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const CardFooter = styled.div`
-  background: #dedddd;
+  background: #ffa500ba;
   flex: 1;
   display: flex;
   align-items: center;

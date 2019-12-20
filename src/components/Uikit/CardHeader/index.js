@@ -5,7 +5,7 @@ const CardHeader = styled.div`
   width: 262px;
   height: 146px;
 
-  background: #dedddd;
+  background: #ffa500ba;
 `;
 
 export default CardHeader;

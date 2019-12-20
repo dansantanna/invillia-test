@@ -7,9 +7,8 @@ const TextTitle = styled.h1`
 
   font-size: ${tokens.fontSize('base')};
   line-height: 22px;
-  color: ${props => props.color || null};
+  color: ${props => props.color || '#444'};
 
-  font-weight: 600;
   font-size: 24px;
   line-height: 30px;
   text-align: center;

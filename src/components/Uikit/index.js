@@ -8,3 +8,6 @@ export { default as Avatar } from './Avatar';
 export { default as Title } from './Title';
 export { default as Button } from './Button';
 export { default as Container } from './Container';
+export { default as Modal } from './Modal';
+export { default as ImgIcon } from './ImgIcon';
+export { default as Carousel } from './Carousel';
