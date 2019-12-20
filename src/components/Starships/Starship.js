@@ -48,7 +48,6 @@ const Starship = ({ link }) => {
       await dispatch(fetchStarship(link));
       setLoading(false);
     };
-    // if (!starship) getStarship();
     if (!starship) getStarship();
   }, [link, dispatch, starship]);
 

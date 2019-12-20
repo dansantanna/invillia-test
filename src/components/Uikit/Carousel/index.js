@@ -5,7 +5,9 @@ import { ImgIcon } from '@Uikit';
 import LeftSrc from '@/assets/icons/left-chevron.svg';
 import RightSrc from '@/assets/icons/right-chevron.svg';
 
-const ImageControl = props => <ImgIcon style={{ cursor: 'pointer' }} {...props} />;
+const ImageControl = props => (
+  <ImgIcon style={{ cursor: 'pointer', marginBottom: '15vh' }} {...props} />
+);
 const LeftControl = ({ previousSlide, ...others }) => (
   <ImageControl src={LeftSrc} onClick={previousSlide} {...others} />
 );
