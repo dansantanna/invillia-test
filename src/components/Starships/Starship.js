@@ -6,7 +6,7 @@ import { Text, ImgIcon } from '@Uikit';
 import starshipSrc from '@/assets/img/starship.png';
 import hashSrc from '@/assets/icons/hash.svg';
 import { fetchStarship } from '@/redux/modules/starships';
-import StarshipLoader from './StarshipLoader';
+import Loader from './Loader';
 
 const ImageStarship = styled.img`
   width: 155px;
@@ -14,7 +14,7 @@ const ImageStarship = styled.img`
 
 const ContainerStarship = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 50px;
 `;
 
@@ -48,20 +48,26 @@ const Starship = ({ link }) => {
       await dispatch(fetchStarship(link));
       setLoading(false);
     };
+    // if (!starship) getStarship();
     if (!starship) getStarship();
   }, [link, dispatch, starship]);
 
-  if (loading) return <StarshipLoader />;
-  if (!starship) return null;
+  if (!starship && !loading) return null;
 
   return (
     <ContainerStarship>
       <ImageStarship src={starshipSrc} />
       <PropertiesStarship>
-        <Attribute title="Name" value={starship.name} />
-        <Attribute title="Model" value={starship.model} />
-        <Attribute title="Class" value={starship.starship_class} />
-        <Attribute title="Manufacturer" value={starship.manufacturer} />
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            <Attribute title="Name" value={starship.name} />
+            <Attribute title="Model" value={starship.model} />
+            <Attribute title="Class" value={starship.starship_class} />
+            <Attribute title="Manufacturer" value={starship.manufacturer} />
+          </>
+        )}
       </PropertiesStarship>
     </ContainerStarship>
   );
