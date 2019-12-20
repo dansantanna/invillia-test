@@ -2,8 +2,8 @@ import React from 'react';
 import NukaCarousel from 'nuka-carousel';
 
 import { ImgIcon } from '@Uikit';
-import LeftSrc from '@/assets/icons/leftChevron.svg';
-import RightSrc from '@/assets/icons/rightChevron.svg';
+import LeftSrc from '@/assets/icons/left-chevron.svg';
+import RightSrc from '@/assets/icons/right-chevron.svg';
 
 const ImageControl = props => <ImgIcon style={{ cursor: 'pointer' }} {...props} />;
 const LeftControl = ({ previousSlide, ...others }) => (
