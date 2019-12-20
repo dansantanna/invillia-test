@@ -2,37 +2,43 @@ import { createReducer } from '@/utils/redux-utils';
 import swapi from '@/utils/swapi';
 
 // Constants
-const JEDI_SET_LOADING = 'JEDI_SET_LOADING';
+const JEDI_SET_SUCCESS = 'JEDI_SET_SUCCESS';
+const JEDI_SET_ERROR = 'JEDI_SET_ERROR';
 
 // Action Creators
-export const setLoading = loading => ({
-  type: JEDI_SET_LOADING,
-  payload: loading,
-});
+const fetchJedisSuccess = payload => ({ type: JEDI_SET_SUCCESS, payload });
+const fetchJedisError = payload => ({ type: JEDI_SET_ERROR, payload });
 
-export const fetchJedis = async (page = 1) => {
+export const fetchJedis = (page = 1) => async dispatch => {
   try {
     const { data } = await swapi.get('people', { params: { page } });
+    dispatch(fetchJedisSuccess(data));
   } catch (error) {
-    console.error('Erro People:', error);
+    dispatch(fetchJedisError(error));
   }
-  return { type: JEDI_SET_LOADING };
 };
 
 // Initial State
 const initialState = {
-  loading: false,
-  list: [],
+  results: [],
   count: null,
   next: null,
-  previous: null,
+  error: null,
 };
 
 // Reducer
 
 export default createReducer(initialState, {
-  [JEDI_SET_LOADING]: (state, action) => ({
+  [JEDI_SET_SUCCESS]: (state, action) => ({
     ...state,
-    loading: action.payload,
+    count: action.payload.count,
+    next: !!action.payload.next,
+    results: state.results.concat(action.payload.results),
+    error: null,
+  }),
+
+  [JEDI_SET_ERROR]: (state, action) => ({
+    ...state,
+    error: action.payload,
   }),
 });
